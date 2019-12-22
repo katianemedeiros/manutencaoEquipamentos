@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Ordens de serviço</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/cadastro.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"></script>
+
+    <div class="text-center row" style="padding-bottom: 15px; padding-top: 15px;">
+      <div class="col-md-1">
+          <a href="../index.html"><img src="../img/angle.png" height="20px"></a>
+      </div>
+      <div class="col-md-11">
+          <h4>Nova ordem de serviço</h4>
+      </div>
+  </div>
+    <form style="padding-left: 30px; padding-right: 30px;">
+      <div class="form-row" >
+        <div class="form-group col-md-12">
+          <label for="inputEmail4">Nome</label>
+          <input type="text" class="form-control" id="nome">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">CPF</label>
+          <input type="text" class="form-control" id="cpf">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputCity">Telefone</label>
+          <input type="text" class="form-control" id="telefone">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Email</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress2">Endereço</label>
+        <input type="text" class="form-control" id="endereco">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputState">Tipo de equipamento</label>
+          <select id="tipo" class="form-control">
+            <option selected>Escolha uma opção</option>
+            <option value="celular">Celular</option>
+            <option value="computador">Computador</option>
+            <option value="notebook">Notebook</option>
+            <option value="impressora">Impressora</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputCity">Marca</label>
+          <input type="text" class="form-control" id="marca">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="inputZip">Problema</label>
+          <textarea class="form-control" id="problema" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline1" value="true" name="status" class="custom-control-input">
+          <label class="custom-control-label" for="customRadioInline1">Ordem de serviço finalizada</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline2" value="false" name="status" class="custom-control-input">
+          <label class="custom-control-label" for="customRadioInline2">Ordem de serviço em andamento</label>
+        </div>
+      </div>
+      <div class="text-center" style="padding-right: 10px;">
+        <button onclick="cadastrar()" class="btn btn-success" style="color: white;">Salvar</button>
+        <a href="../index.html" class="btn btn-danger">Cancelar</a>
+      </div>
+    </form>
+  </body>
+
+
+  <div class="modal fade" id="cadastrado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalCentralizado">Cadastro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         Ordem de servico cadastrada com sucesso.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('#cpf').mask('000.000.000-00', {reverse: true});
+  </script>
+</html>
